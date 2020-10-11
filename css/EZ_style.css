@@ -1,0 +1,102 @@
+/* ==== 原本網站已有的 css ==== */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #343434;
+    text-align: left;
+    background-color: #F2F4FF;
+}
+/* header */
+.ez-nav.nav_scrollbg {
+    background-color: #fff;
+    height: 66px;
+}
+
+.ez-nav {
+    width: 100%;
+    -webkit-transition: box-shadow 0.3s, background-color 0.3s;
+    -webkit-transition: background-color 0.3s, -webkit-box-shadow 0.3s;
+    transition: background-color 0.3s, -webkit-box-shadow 0.3s;
+    transition: box-shadow 0.3s, background-color 0.3s;
+    transition: box-shadow 0.3s, background-color 0.3s, -webkit-box-shadow 0.3s;
+}
+/* content */
+.wrap-content {
+    margin-top: 68px;
+}
+
+/* ==== 原本網站已有的 css  end ==== */
+
+/* ==== 本次切版新增 css ==== */
+.page-title img {
+    vertical-align: top;
+}
+
+/* table rwd */
+.rwd-table {
+    background: #fff;
+    overflow: hidden;
+}
+
+.rwd-table tr:nth-of-type(2n) {
+    background: #eee;
+}
+.rwd-table th,
+.rwd-table td {
+    margin: 0.5em 1em;
+}
+.rwd-table {
+    min-width: 100%;
+}
+
+.rwd-table th {
+    display: none;
+}
+
+.rwd-table td {
+    display: block;
+}
+
+.rwd-table td:before {
+    content: attr(data-th) " : ";
+    font-weight: bold;
+    width: 6.5em;
+    display: inline-block;
+}
+
+.rwd-table th,
+.rwd-table td {
+    text-align: left;
+}
+
+.rwd-table th,
+.rwd-table td:before {
+    color: #D20B2A;
+    font-weight: bold;
+}
+
+@media(min-width: 480px) {
+    .rwd-table td:before {
+        display: none;
+    }
+    .rwd-table th,
+    .rwd-table td {
+        display: table-cell;
+        padding: 0.25em 0.5em;
+    }
+    .rwd-table th:first-child,
+    .rwd-table td:first-child {
+        padding-left: 0;
+    }
+    .rwd-table th:last-child,
+    .rwd-table td:last-child {
+        padding-right: 0;
+    }
+    .rwd-table th,
+    .rwd-table td {
+        padding: 1em !important;
+    }
+}

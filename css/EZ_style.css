@@ -28,13 +28,45 @@ body {
     margin-top: 68px;
 }
 
-/* ==== 原本網站已有的 css  end ==== */
+/* ==== 原本網站已有的 css end ==== */
 
 /* ==== 本次切版新增 css ==== */
+.page-title {
+    margin-bottom: 0;
+}
 .page-title img {
     vertical-align: top;
 }
 
+/* ----- confirmPayment.html ----- */
+.settlement {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.handling-fee-title {
+    display: inline-block;
+}
+
+.handling-fee-sum {
+    width: 160px;
+    display: inline-block;
+}
+
+.actually-title {
+    display: inline-block;
+    color: #343434;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.total-sum {
+    width: 160px;
+    display: inline-block;
+    color: #f72525;
+    font-weight: 600;
+    font-size: 24px;
+}
 /* table rwd */
 .rwd-table {
     background: #fff;
@@ -42,7 +74,7 @@ body {
 }
 
 .rwd-table tr:nth-of-type(2n) {
-    background: #eee;
+    background: #fff;
 }
 .rwd-table th,
 .rwd-table td {
@@ -74,11 +106,31 @@ body {
 
 .rwd-table th,
 .rwd-table td:before {
-    color: #D20B2A;
+    color: #333;
     font-weight: bold;
 }
 
+.rwd-table tr {
+    border-bottom: solid 3px #eee;
+}
+
+.rwd-table th {
+    color: #ffffff;
+    background-color: #0071ED;
+}
+
+.rwd-table th:first-child {
+    border-radius: 11px 0 0 0;
+}
+
+.rwd-table th:last-child {
+    border-radius: 0 11px 0 0;
+}
+
 @media(min-width: 480px) {
+    .rwd-table tr {
+        border-bottom: solid 1px #eee;
+    }
     .rwd-table td:before {
         display: none;
     }

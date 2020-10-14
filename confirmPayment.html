@@ -20,8 +20,8 @@
         </nav>
     </header>
     <div class="wrap-content container">
-        <h4 class="text-center">確認付款資訊</h4>
-        <h6 class="mt-5 page-title">結帳金額</h6>
+        <h3 class="text-center">確認付款資訊</h3>
+        <h5 class="mt-5 page-title">結帳金額</h5>
         <!-- table -->
         <table class="rwd-table">
             <tr>
@@ -56,17 +56,47 @@
                 <td data-th="折扣">折扣代碼 NT$ -360</td>
                 <td data-th="付款金額">NT＄2,640</td>
             </tr>
+            <tr class="settlement-tr">
+                <td colspan="6">
+                    <!-- 結算 -->
+                    <div class="settlement">
+                        <div class="mt-2">
+                            <div class="handling-fee-title">超商手續費</div>
+                            <div class="handling-fee-sum">NT$ 30</div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="actually-title">實付金額</div>
+                            <div class="total-sum">NT$ 6,102</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
         </table>
-        <!-- 結算 -->
-        <div class="settlement">
-            <div class="mt-2">
-                <div class="handling-fee-title">超商手續費</div>
-                <div class="handling-fee-sum">NT$ 30</div>
+        <!-- 付款資訊 -->
+        <section>
+            <h5>付款資訊</h5>
+            <div class="pay-info">
+                <div class="row">
+                    <div class="col-md-6 pay-method">
+                        <div class="info-title">付款方式</div>
+                        <div class="info-p">超商付款</div>
+                    </div>
+                    <div class="col-md-6 invoice-info">
+                        <div class="info-title">發票資訊</div>
+                        <div class="info-p">聯絡人： 王小明</div>
+                        <div class="info-p">E-mail abc123@gmail.com</div>
+                        <div class="info-p">手機號碼： 0912345678</div>
+                        <div class="info-p">發票類型： 統編發票</div>
+                        <div class="info-p">統一編號： 1234567</div>
+                        <div class="info-p">發票抬頭： </div>
+                    </div>
+                </div>
             </div>
-            <div class="mt-2">
-                <div class="actually-title">實付金額</div>
-                <div class="total-sum">NT$ 6,102</div>
-            </div>
+        </section>
+        <!-- 按鈕 -->
+        <div class="bottom-btn-div">
+            <button type="button" class="btn btn-outline-primary ez-btn-md">返回修改</button>
+            <button type="button" class="btn btn-primary ez-btn-md">確認付款</button>
         </div>
     </div>
 </body>

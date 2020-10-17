@@ -126,16 +126,17 @@ body {
     margin: 20px 10px;
 }
 
-.flex-1 {
+/* .flex-1 {
     flex: 1;
 }
 
 .flex-2 {
     flex: 2;
-}
+} */
 
 /* ----- shoppingInfo.html ----- */
 .course-row {
+    margin: 15px 0;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     -webkit-transition: box-shadow 0.3s;
@@ -145,17 +146,31 @@ body {
     transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
     border-radius: 11px;
 }
-.course-tr {
+.course-th {
     padding: 10px 20px;
     display: flex;
     background-color: #ffffff;
     border-radius: 0.5rem 0.5rem 0 0;
 }
 
+.course-tr {
+    background-color: #ffffff;
+    padding: 0px 20px;
+}
 .course-td {
-    ;
-    /* display: flex;
-    flex-direction: column; */
+    display: inline-block;
+    float: left;
+}
+
+.td-1 {
+    width: 10%;
+}
+
+.td-2 {
+    width: 20%;
+}
+.td-3 {
+    width: 30%;
 }
 
 /* .course-info {
@@ -184,7 +199,6 @@ body {
 }
 
 .course-name {
-    ;
     /* display: flex;
     flex-direction: column; */
 }
@@ -230,9 +244,46 @@ body {
     transition: 0.3s;
 }
 
-@media(max-width:768px) {
+.td-group-3 .price-title {
+    display: none;
+}
+
+@media(max-width:1024px) {
     .th-title {
         display: none;
+    }
+
+    .td-group-1.td-1 {
+        width: 100px;
+    }
+
+    .td-group-1.td-3 {
+        width: calc(100% - 100px);
+        min-height: 65px;
+    }
+
+    .td-group-2.td-1 {
+        width: 100%;
+    }
+
+    .td-group-2 .course-status {
+        text-align: right;
+    }
+
+    .td-group-3.td-1 {
+        width: 50%;
+    }
+
+    .td-group-3 .price-title {
+        display: inline-block;
+    }
+
+    .td-group-3 .course-price {
+        text-align: right;
+    }
+
+    .td-group-4.td-2 {
+        width: 50%;
     }
 }
 /* ----- confirmPayment.html ----- */

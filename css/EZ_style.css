@@ -126,17 +126,33 @@ body {
     margin: 20px 10px;
 }
 
-/* .flex-1 {
-    flex: 1;
+.actually-title {
+    display: inline-block;
+    color: #343434;
+    font-size: 24px;
+    font-weight: 600;
 }
 
-.flex-2 {
-    flex: 2;
-} */
+.total-sum {
+    display: inline-block;
+    color: #f72525;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.form-control:focus {
+    border-color: #665bf7;
+    outline: 0;
+    box-shadow: none;
+}
 
 /* ----- shoppingInfo.html ----- */
 .course-row {
+    background-color: #ffffff;
     margin: 15px 0;
+}
+
+.border-radius-shadow {
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     -webkit-transition: box-shadow 0.3s;
@@ -155,7 +171,7 @@ body {
 
 .course-tr {
     background-color: #ffffff;
-    padding: 0px 20px;
+    padding: 0 20px 10px;
 }
 .course-td {
     display: inline-block;
@@ -173,12 +189,10 @@ body {
     width: 30%;
 }
 
-/* .course-info {
-    display: flex;
-    flex-direction: row;
-    background-color: #ffffff;
-    padding: 20px;
-} */
+.td-hr {
+    border-top: 2px solid #eeeeee;
+    margin: 0 20px;
+}
 
 .course-img {
     width: 80px;
@@ -199,13 +213,11 @@ body {
 }
 
 .course-name {
-    /* display: flex;
-    flex-direction: column; */
+    padding-right: 10px;
 }
 
 .th-title {
     border-bottom: 2px solid #eeeeee;
-    margin-bottom: 10px;
     padding: 10px 0;
 }
 
@@ -215,10 +227,13 @@ body {
     font-size: 18px;
 }
 
+.discount {
+    margin-top: 6px;
+}
+
 .tool-div {
-    background-color: #ffffff;
     text-align: right;
-    padding: 15px;
+    padding: 10px 15px;
     border-radius: 0 0 11px 11px;
 }
 
@@ -248,6 +263,53 @@ body {
     display: none;
 }
 
+.shopping-cart-account {
+    background-color: #ffffff;
+    padding: 10px 20px;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #7028f2;
+    background-color: #7028f2;
+}
+
+.discount-code-input {
+    display: inline-block;
+    width: 200px;
+    margin-left: 15px;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.coupon-input {
+    display: inline-block;
+    width: 154px;
+    margin-left: 15px;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.shopping-cart-account .custom-control-label {
+    vertical-align: middle;
+}
+
+.group-input {
+    position: relative;
+    display: inline-block;
+}
+
+.group-input-btn {
+    position: relative;
+    vertical-align: top;
+    left: -5px;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: solid 1px #8B82F9;
+}
+
+.group-cancel-btn {
+    background-color: #e6e6e6;
+    color: #343434;
+    border: 1px solid #ced4da;
+}
 @media(max-width:1024px) {
     .th-title {
         display: none;
@@ -285,6 +347,15 @@ body {
     .td-group-4.td-2 {
         width: 50%;
     }
+
+    .discount-code-input,
+    .coupon-input {
+        margin-left: 0;
+    }
+
+    .group-input {
+        margin-top: 10px; 
+    }
 }
 /* ----- confirmPayment.html ----- */
 .settlement {
@@ -297,23 +368,12 @@ body {
 }
 
 .handling-fee-sum {
-    width: 160px;
+    width: 170px;
     display: inline-block;
 }
 
-.actually-title {
-    display: inline-block;
-    color: #343434;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.total-sum {
-    width: 160px;
-    display: inline-block;
-    color: #f72525;
-    font-weight: 600;
-    font-size: 24px;
+.settlement .total-sum {
+    width: 170px;
 }
 
 .pay-info {

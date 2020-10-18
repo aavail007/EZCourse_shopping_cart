@@ -1,4 +1,4 @@
-/* ==== 原本網站已有的 css ==== */
+/* ======== 原本網站已有的 css ======== */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -108,9 +108,9 @@ body {
     margin-top: 68px;
 }
 
-/* ==== 原本網站已有的 css end ==== */
+/* ======== 原本網站已有的 css end ======== */
 
-/* ==== 本次切版新增 css ==== */
+/* ======== 本次切版新增 css ======== */
 .page-title {
     margin-bottom: 0;
 }
@@ -124,6 +124,7 @@ body {
 
 .bottom-btn-div button {
     margin: 20px 10px;
+    width: 200px;
 }
 
 .actually-title {
@@ -144,6 +145,10 @@ body {
     border-color: #665bf7;
     outline: 0;
     box-shadow: none;
+}
+
+.coupon-collapse {
+    padding: 20px 0;
 }
 
 /* ----- shoppingInfo.html ----- */
@@ -265,7 +270,7 @@ body {
 
 .shopping-cart-account {
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 20px;
 }
 
 .custom-control-input:checked~.custom-control-label::before {

@@ -190,13 +190,14 @@
                 <div class="col-md-8 col-sm-12 text-right">使用折扣券／使用折扣代碼</div>
                 <div class="col-md-4 col-sm-12 text-right">NT$ -828</div>
             </div>
-            <div class="row">
+            <div class="row mt-1">
                 <div class="col-md-8 col-sm-12 text-right actually-title">實付金額</div>
                 <div class="col-md-4 col-sm-12 text-right total-sum">NT$6,072</div>
             </div>
             <!-- 折扣選擇 -->
             <div class="custom-control custom-radio text-right mt-3">
-                <input type="radio" id="discountCode" name="discountRadio" class="custom-control-input">
+                <input type="radio" id="discountCode" name="discountRadio" value="discount"
+                    class="custom-control-input">
                 <label class="custom-control-label" for="discountCode">我有折扣代碼</label>
                 <div class="group-input">
                     <input type="text" class="form-control discount-code-input" placeholder="請輸入折扣代碼">
@@ -204,18 +205,45 @@
                 </div>
             </div>
             <div class="custom-control custom-radio text-right mt-3">
-                <input type="radio" id="coupon" name="discountRadio" class="custom-control-input">
-                <label class="custom-control-label" for="coupon">使用我的折扣券</label>
+                <input type="radio" id="couponRadio" name="discountRadio" value="coupon" class="custom-control-input"
+                    data-target="#collapseExample">
+                <label class="custom-control-label" for="couponRadio">使用我的折扣券</label>
                 <div class="group-input">
-                    <input type="text" class="form-control coupon-input" placeholder="">
+                    <input type="text" class="form-control coupon-input">
                     <button class="btn group-cancel-btn group-input-btn" type="button"> X 取消使用</button>
                 </div>
-<!-- 
-                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">使用我的折扣券</label> -->
+            </div>
+            <!-- 折扣券收合 -->
+            <div class="collapse coupon-collapse" id="couponCollapse">
+                <div class="card card-body">
+                    <div class="row">
+                        <div class="col-md-4">88 折起</div>
+                        <div class="col-md-4">防疫早鳥 - Taiwan Can Help - 8/31 前單筆訂單 88 折</div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary ez-btn-md">使用折扣券</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        <!-- 按鈕 -->
+        <div class="bottom-btn-div">
+            <button type="button" class="btn btn-primary ez-btn-md">確認付款</button>
+        </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            // 選擇 折扣碼 或 折扣券 的 radio，並展開關閉折扣券的行為
+            $('input[type=radio][name=discountRadio]').change(function () {
+                if (this.value == 'discount') {
+                    $('#couponCollapse').collapse('hide');
+                } else if (this.value == 'coupon') {
+                    $('#couponCollapse').collapse('show');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -111,9 +111,30 @@ body {
 /* ======== 原本網站已有的 css end ======== */
 
 /* ======== 本次切版新增 css ======== */
+.btn-outline-secondary {
+    color: #5E52F6;
+    border-color: #5E52F6;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #5E52F6;
+    border-color: #5E52F6;
+    opacity: 1;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #5E52F6;
+    border-color: #5E52F6;
+}
+
 .page-title {
     margin-bottom: 0;
 }
+
 .page-title img {
     vertical-align: top;
 }
@@ -149,6 +170,42 @@ body {
 
 .coupon-collapse {
     padding: 20px 0;
+}
+
+.coupon-card {
+    background-color: #dcdcdc;
+    padding: 25px 20px;
+    border-radius: 11px;
+}
+
+.coupon-dotted {
+    border-right: 2px dashed #ffffff;
+    height: 70px;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.coupon-title {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.use-coupon-btn {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.coupon-3 {
+    display: inline-block;
+    width: 180px;
+    vertical-align: top;
+}
+
+.coupon-6 {
+    display: inline-block;
+    width: calc(100% - 420px);
+    vertical-align: top;
 }
 
 /* ----- shoppingInfo.html ----- */
@@ -315,6 +372,11 @@ body {
     color: #343434;
     border: 1px solid #ced4da;
 }
+
+.confirm-coupon {
+    text-align: center;
+    margin-top: 15px;
+}
 @media(max-width:1024px) {
     .th-title {
         display: none;
@@ -359,7 +421,7 @@ body {
     }
 
     .group-input {
-        margin-top: 10px; 
+        margin-top: 10px;
     }
 }
 /* ----- confirmPayment.html ----- */
@@ -491,4 +553,86 @@ body {
     .rwd-table td {
         padding: 1em !important;
     }
+}
+
+/* ----- paymentMethod.html  ----- */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    height: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 6px;
+    line-height: 50px;
+    padding: 0px 10px;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #ffffff;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 20px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #898989 transparent transparent transparent;
+}
+
+.select-selected:after {
+    right: 20px;
+    border: 8px solid transparent;
+    border-color: #898989 transparent transparent transparent;
+}
+
+.select-selected {
+    color: #53595f;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    height: 48px;
+    padding-right: 50px;
+}
+
+.select-items div {
+    color: #53595f;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    height: 35px;
+    line-height: 35px;
+    z-index: 99;
+    padding: 2px 10px;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #ffffff;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: solid 1px #eee;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
 }

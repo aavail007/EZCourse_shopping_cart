@@ -24,8 +24,8 @@
         <h3 class="text-center mb-4">付款方式</h3>
         <div class="row">
             <div class="col-md-8 col-sm-12">
-                <!-- 選擇付款方式（下拉） -->
                 <div class="pay-method-div border-radius-shadow">
+                    <!-- 選擇付款方式（下拉） -->
                     <div id="payMethodSelect" class="form-group pay-select">
                         <div class="custom-select">
                             <select>
@@ -36,6 +36,7 @@
                             </select>
                         </div>
                     </div>
+                    <!-- 銀行代碼下拉選項 -->
                     <div id="bankCodeSelect" class="form-group pay-select d-none">
                         <div class="custom-select">
                             <select>
@@ -57,7 +58,7 @@
 
                 </div>
                 <!-- 發票選項 -->
-                <div class="pay-method-div border-radius-shadow mt-4">
+                <div class="pay-method-div border-radius-shadow mt-4 mb-5">
                     <div class="fun-title">發票選項</div>
                     <hr>
                     <div>以下資訊只用於開立發票，並不會在其他頁面顯示。發票一經開立後不可更改，請確認資訊是否都填寫正確喔！</div>
@@ -79,8 +80,8 @@
                     </form>
                     <hr>
                     <!-- 發票類型 -->
-                    <div class="form-group pay-select">
-                        <label for="invoicePhone">發票類型<span class="small-red ml-2">如需開立統編，請選擇統編發票</span></label>
+                    <div id="invoiceTypeSelect" class="form-group pay-select">
+                        <label>發票類型<span class="small-red ml-2">如需開立統編，請選擇統編發票</span></label>
                         <div class="custom-select">
                             <select>
                                 <option>電子發票</option>
@@ -88,7 +89,41 @@
                             </select>
                         </div>
                     </div>
-                    <div class="">電子發票將在結帳完成後，寄送至你的電子信箱。</div>
+                    <div id="eInvoice" class="invoice-content">電子發票將在結帳完成後，寄送至你的電子信箱。</div>
+                    <div id="uniformNumberForm" class="invoice-content d-none">
+                        <form>
+                            <div class="row">
+                                <div class="col-6 form-group">
+                                    <label for="uniformNumber">統一編號<span class="small-red">＊</span></label>
+                                    <input type="text" class="form-control" id="uniformNumber"
+                                        placeholder="送出後無法更改，務必確認">
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="invoiceTitle">發票抬頭<span class="small-red">＊</span></label>
+                                    <input type="text" class="form-control" id="invoiceTitle" placeholder="請輸入發票抬頭">
+                                </div>
+                                <div class="col-12">
+                                    <label for="postalCode">公司地址<span class="small-red">＊</span></label>
+                                    <div class="row">
+                                        <div class="col-3 form-group">
+                                            <input type="text" class="form-control" id="postalCode" placeholder="郵遞區號">
+                                        </div>
+                                        <div class="col-9 form-group">
+                                            <input type="text" class="form-control" id="companyAddress"
+                                                placeholder="請輸入公司地址">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- 勾選同意資料 -->
+                    <div class="form-group mt-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="agreeInfo">
+                            <label class="custom-control-label" for="agreeInfo">請您先勾選同意將上述資訊提供給 EZCourse 做資訊聯繫使用。</label>
+                          </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
@@ -123,11 +158,11 @@
     <script>
         $(function () {
             initSelect();
-
             /* If the user clicks anywhere outside the select box,then close all select boxes: */
             document.addEventListener("click", closeAllSelect);
         });
 
+        // 自定義樣式的 select
         function initSelect() {
             var x, i, j, selElmnt, a, b, c;
             /*look for any elements with the class "custom-select":*/
@@ -150,11 +185,15 @@
                     c.addEventListener("click", function (e) {
                         /*when an item is clicked, update the original select box,
                         and the selected item:*/
-                        
-                        // 如果是選擇付款方式的 select 才會觸發 changePayMethodContent()
+
+                        // 判斷目前點擊的 select 是哪一個
                         var targetSelectId = $(e.target).parents('.pay-select').attr('id');
-                        if(targetSelectId === 'payMethodSelect') {
+                        if (targetSelectId === 'payMethodSelect') {
+                            // 如果是選擇付款方式的 select 才會觸發 changePayMethodContent()
                             changePayMethodContent(e.target.textContent);
+                        } else if (targetSelectId === 'invoiceTypeSelect') {
+                            // 如果是選擇發票類型的 select 才會觸發 changeinvoiceContent()
+                            changeinvoiceContent(e.target.textContent);
                         }
                         var y, i, k, s, h;
                         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
@@ -188,6 +227,7 @@
             }
         }
 
+        // 關閉自定義樣式的 select 選項
         function closeAllSelect(elmnt) {
             /*a function that will close all select boxes in the document,
             except the current select box:*/
@@ -208,8 +248,8 @@
             }
         }
 
+        // 依據所選的付款方式判斷要顯示的內容
         function changePayMethodContent(type) {
-            // debugger
             $('.pay-method-content, #bankCodeSelect').addClass('d-none');
             if (type === '信用卡') {
                 $('#creditCard').removeClass('d-none');
@@ -221,8 +261,16 @@
             } else if (type === 'Line Pay') {
                 $('#linePay').removeClass('d-none');
             }
+        }
 
-
+        // 依據所選的類型判斷要顯示的內容
+        function changeinvoiceContent(type) {
+            $('.invoice-content').addClass('d-none');
+            if (type === '電子發票') {
+                $('#eInvoice').removeClass('d-none');
+            } else if (type === '統編發票') {
+                $('#uniformNumberForm').removeClass('d-none');
+            }
         }
     </script>
 </body>

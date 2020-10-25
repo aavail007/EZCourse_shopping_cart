@@ -337,6 +337,12 @@ body {
     background-color: #7028f2;
 }
 
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after,
+.custom-checkbox,
+.custom-control-label {
+    cursor: pointer;
+}
+
 .discount-code-input {
     display: inline-block;
     width: 200px;
@@ -687,10 +693,10 @@ body {
 }
 
 .order-detail-div .bottom-btn-div button {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
-@media(min-width: 768px) and (max-width: 991.99px) {
+@media(min-width: 768px) and(max-width: 991.99px) {
     .mdtext-right {
         text-align: right;
     }

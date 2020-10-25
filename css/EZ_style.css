@@ -89,6 +89,14 @@ body {
     border-color: #7028f2;
 }
 
+.btn-outline-primary a {
+    color: #5E52F6;
+}
+
+.btn-primary a {
+    color: #fff;
+}
+
 /* header */
 .ez-nav.nav_scrollbg {
     background-color: #fff;

@@ -12,11 +12,36 @@
 </head>
 
 <body>
-    <header class="ez-nav fixed-top header-top">
+    <!-- header 再請以以開發好的切版為主，此僅為示意 -->
+    <header class="ez-nav fixed-top header-top" style="background-color: #ffffff;">
         <nav class="navbar navbar-expand-md">
             <a class="navbar-brand" href="#">
                 <img src="img/img_logo.svg" class="ez-logo" alt="...">
             </a>
+            <div class="navbar-right" style="position: absolute; right: 20px;">
+                <ul class="navbar-nav align-items-center">
+                    <!-- @購物車 -->
+                    <li class="ez-nav-item nav-item mr-3 mb-3 mb-md-0">
+                        <button class="nav_btn-cart btn" type="button">
+                            <a href="./shoppingInfo.html">
+                                <img class="ez-icon" src="img/nav-cart-off.svg" alt="">
+                            </a>
+                        </button>
+                    </li>
+                    <!-- @登入 -->
+                    <li class="ez-nav-item nav-item mx-md-3 mb-3 mb-md-0">
+                        <button class="nav_btn-login btn btn-outline-primary ez-btn-sm" type="button">
+                            <a class="" href="#">登入</a>
+                        </button>
+                    </li>
+                    <!-- @註冊 -->
+                    <li class="ez-nav-item nav-item">
+                        <button class="nav_btn-signin btn btn-primary ez-btn-sm" type="button">
+                            <a class="" href="#">註冊</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -121,8 +146,9 @@
                     <div class="form-group mt-4">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="agreeInfo">
-                            <label class="custom-control-label" for="agreeInfo">請您先勾選同意將上述資訊提供給 EZCourse 做資訊聯繫使用。</label>
-                          </div>
+                            <label class="custom-control-label" for="agreeInfo">請您先勾選同意將上述資訊提供給 EZCourse
+                                做資訊聯繫使用。</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,7 +173,9 @@
                         <hr>
                         <!-- 按鈕 -->
                         <div class="bottom-btn-div">
-                            <button type="button" class="btn btn-primary ez-btn-md">下一步</button>
+                            <a href="./confirmPayment.html">
+                                <button type="button" class="btn btn-primary ez-btn-md">下一步</button>
+                            </a>
                         </div>
                     </div>
                 </div>

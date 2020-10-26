@@ -775,4 +775,8 @@ body {
     .invoice-form .form-control {
         width: 100%;
     }
+
+    .pay-select {
+        width: 100%;
+    }
 }

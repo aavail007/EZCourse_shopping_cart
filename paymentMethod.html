@@ -51,7 +51,7 @@
             <div class="col-md-8 col-sm-12">
                 <div class="pay-method-div border-radius-shadow">
                     <!-- 選擇付款方式（下拉） -->
-                    <div id="payMethodSelect" class="form-group pay-select">
+                    <div id="payMethodSelect" class="form-group pay-select select-id">
                         <div class="custom-select">
                             <select>
                                 <option value="1">信用卡</option>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <!-- 銀行代碼下拉選項 -->
-                    <div id="bankCodeSelect" class="form-group pay-select d-none">
+                    <div id="bankCodeSelect" class="form-group pay-select select-id d-none">
                         <div class="custom-select">
                             <select>
                                 <option value="822">822 中國信託</option>
@@ -83,7 +83,7 @@
 
                 </div>
                 <!-- 發票選項 -->
-                <div class="pay-method-div border-radius-shadow mt-4 mb-5">
+                <div class="pay-method-div border-radius-shadow mt-4 mb-4">
                     <div class="fun-title">發票選項</div>
                     <hr>
                     <div>以下資訊只用於開立發票，並不會在其他頁面顯示。發票一經開立後不可更改，請確認資訊是否都填寫正確喔！</div>
@@ -105,7 +105,7 @@
                     </form>
                     <hr>
                     <!-- 發票類型 -->
-                    <div id="invoiceTypeSelect" class="form-group pay-select">
+                    <div id="invoiceTypeSelect" class="form-group select-id">
                         <label>發票類型<span class="small-red ml-2">如需開立統編，請選擇統編發票</span></label>
                         <div class="custom-select">
                             <select>
@@ -118,22 +118,22 @@
                     <div id="uniformNumberForm" class="invoice-content d-none">
                         <form>
                             <div class="row">
-                                <div class="col-6 form-group">
+                                <div class="col-md-6 col-sm-12 form-group">
                                     <label for="uniformNumber">統一編號<span class="small-red">＊</span></label>
                                     <input type="text" class="form-control" id="uniformNumber"
                                         placeholder="送出後無法更改，務必確認">
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-md-6 col-sm-12 form-group">
                                     <label for="invoiceTitle">發票抬頭<span class="small-red">＊</span></label>
                                     <input type="text" class="form-control" id="invoiceTitle" placeholder="請輸入發票抬頭">
                                 </div>
                                 <div class="col-12">
                                     <label for="postalCode">公司地址<span class="small-red">＊</span></label>
                                     <div class="row">
-                                        <div class="col-3 form-group">
+                                        <div class="col-md-3 col-sm-12 form-group">
                                             <input type="text" class="form-control" id="postalCode" placeholder="郵遞區號">
                                         </div>
-                                        <div class="col-9 form-group">
+                                        <div class="col-md-9 col-sm-12 form-group">
                                             <input type="text" class="form-control" id="companyAddress"
                                                 placeholder="請輸入公司地址">
                                         </div>
@@ -215,7 +215,7 @@
                         and the selected item:*/
 
                         // 判斷目前點擊的 select 是哪一個
-                        var targetSelectId = $(e.target).parents('.pay-select').attr('id');
+                        var targetSelectId = $(e.target).parents('.select-id').attr('id');
                         if (targetSelectId === 'payMethodSelect') {
                             // 如果是選擇付款方式的 select 才會觸發 changePayMethodContent()
                             changePayMethodContent(e.target.textContent);

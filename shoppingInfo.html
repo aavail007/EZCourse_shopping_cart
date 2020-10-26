@@ -240,17 +240,37 @@
             </div>
             <!-- 折扣券收合 -->
             <div class="collapse coupon-collapse" id="couponCollapse">
+                <!-- 一張折價券 -->
                 <div class="coupon-card border-radius-shadow">
-                    <div class="coupon-3 coupon-title">88 折起</div>
+                    <div class="coupon-title">88 折起</div>
                     <div class="coupon-dotted"></div>
-                    <div class="coupon-6">防疫早鳥 - Taiwan Can Help - 8/31 前單筆訂單 88 折</div>
-                    <div class="coupon-3 use-coupon-btn">
+                    <div class="coupon-content">
+                        <div class="coupon-detail">
+                            防疫早鳥 - Taiwan Can Help - 8/31 前單筆訂單 88 折
+                        </div>
+                        <div class="coupon-date">有效日期：2020/09/01 10:42</div>
+                    </div>
+                    <div class="use-coupon-btn">
                         <button type="button" class="btn btn-outline-secondary">使用折扣券</button>
+                    </div>
+                </div>
+                <!-- 一張折價券 -->
+                <div class="coupon-card border-radius-shadow">
+                    <div class="coupon-title">88 折起</div>
+                    <div class="coupon-dotted"></div>
+                    <div class="coupon-content">
+                        <div class="coupon-detail">
+                            防疫早鳥 - Taiwan Can Help - 8/31 前單筆訂單 88 折
+                        </div>
+                        <div class="coupon-date">有效日期：2020/09/01 10:42</div>
+                    </div>
+                    <div class="use-coupon-btn">
+                        <button type="button" class="btn btn-outline-secondary btn-selected">已選取</button>
                     </div>
                 </div>
                 <!-- 確認 收起折扣券區塊 -->
                 <div class="confirm-coupon">
-                    <button type="button" class="btn btn-outline-secondary">確認</button>
+                    <button type="button" id="confirmCoupon" class="btn btn-outline-secondary">確認</button>
                 </div>
             </div>
         </section>
@@ -272,6 +292,11 @@
                     $('#couponCollapse').collapse('show');
                 }
             });
+
+            // 點擊 確認 收合折價券畫面
+            $('#confirmCoupon').on('click', function () {
+                $('#couponCollapse').collapse('hide');
+            })
         });
     </script>
 </body>

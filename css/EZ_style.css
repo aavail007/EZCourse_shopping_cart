@@ -126,6 +126,12 @@ body {
 
 
 /* ======== 本次切版新增 css ======== */
+.overflow-ellipsis-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 .btn-outline-secondary {
     color: #5E52F6;
     border-color: #5E52F6;
@@ -779,4 +785,43 @@ body {
     .pay-select {
         width: 100%;
     }
+}
+
+/* ----- popup  ----- */
+.popup-div {
+    background-color: #ffffff;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    border-radius: 11px;
+    right: 30px;
+    top: 75px;
+}
+
+.popup-course {
+    padding: 15px;
+}
+
+.popup-course-img {
+    width: 100px;
+    height: 75px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.popup-course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-right {
+    display: inline-block;
+    width: calc(100% - 120px);
+    margin-left: 10px;
+    padding: 2px 0;
+}
+
+.popup-course-name {
+    height: 48px;
 }

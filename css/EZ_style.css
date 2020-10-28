@@ -152,6 +152,28 @@ body {
     border-color: #5E52F6;
 }
 
+.btn-secondary {
+    color: #fff;
+    background-color: #5E52F6;
+    border-color: #5E52F6;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #5E52F6;
+    border-color: #5E52F6;
+    opacity: 0.8;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #5E52F6;
+    border-color: #5E52F6;
+    opacity: 0.8;
+}
+
 .page-title {
     margin-bottom: 0;
 }
@@ -236,8 +258,7 @@ body {
 
 .coupon-detail {
     display: block;
-    margin: 10px 0;
-    margin-top: 22px;
+    margin: 22px 0 10px;
 }
 
 .coupon-date {
@@ -791,15 +812,33 @@ body {
 .popup-div {
     background-color: #ffffff;
     position: absolute;
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 350px;
     border-radius: 11px;
-    right: 30px;
-    top: 75px;
+    right: 20px;
+    top: 70px;
+    display: none;
+}
+
+.popup-div.open {
+    display: block;
+}
+
+.popup-triangle {
+   width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #ffffff transparent;
+    position: absolute;
+    top: -10px;
+    left: calc(50% + 18px);
+    transform: translateX(-50%);
 }
 
 .popup-course {
-    padding: 15px;
+    padding: 10px 20px;
+    border-bottom: solid 1px #eee;
 }
 
 .popup-course-img {
@@ -824,4 +863,30 @@ body {
 
 .popup-course-name {
     height: 48px;
+}
+
+.popup-course-status {
+    color: #b5b5b5;
+}
+
+.popup-course-price {
+    color: #f72525;
+}
+
+.course-scroll {
+    height: 260px;
+    overflow: auto;
+}
+
+.popup-bottom {
+    padding: 20px;
+}
+
+.popup-btn {
+    width: 100%;
+}
+
+.popup-btn button {
+    height: 50px;
+    width: 100%;
 }

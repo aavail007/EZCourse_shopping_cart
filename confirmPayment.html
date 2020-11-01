@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/EZ_style.css">
     <script src="js/plugin/jQuery-v3.5.1.min.js"></script>
     <script src="js/plugin/bootstrap.min.js"></script>
+    <!-- 提供給 popup 的 js -->
+    <script src="js/shoppingCart.js"></script>
 </head>
 
 <body>
@@ -21,7 +23,8 @@
             <div class="navbar-right" style="position: absolute; right: 20px;">
                 <ul class="navbar-nav align-items-center">
                     <!-- @購物車 -->
-                    <li class="ez-nav-item nav-item mr-3 mb-3 mb-md-0">
+                    <li id="cartBtn" class="ez-nav-item nav-item mr-3 mb-3 mb-md-0" onmouseover="openPopup()"
+                        onmouseout="closePopup()">
                         <button class="nav_btn-cart btn" type="button">
                             <a href="./shoppingInfo.html">
                                 <img class="ez-icon" src="img/nav-cart-off.svg" alt="">
@@ -43,7 +46,68 @@
                 </ul>
             </div>
         </nav>
+        <!-- popup -->
+        <div id="popupDiv" class="popup-div border-radius-shadow" onmouseover="openPopup()" onmouseout="closePopup()">
+            <div class="popup-triangle"></div>
+            <!-- 滾輪範圍 -->
+            <div class="course-scroll">
+                <!-- 一門課程 -->
+                <div class="popup-course">
+                    <div class="popup-course-img">
+                        <img src="img/demo/course-1.png">
+                    </div>
+                    <div class="popup-right">
+                        <div class="popup-course-name overflow-ellipsis-2">洪欣老師正音課</div>
+                        <div class="row">
+                            <div class="col-6 popup-course-status">已開課</div>
+                            <div class="col-6 text-right popup-course-price">NT$2,000</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 一門課程 -->
+                <div class="popup-course">
+                    <div class="popup-course-img">
+                        <img src="img/demo/course-1.png">
+                    </div>
+                    <div class="popup-right">
+                        <div class="popup-course-name overflow-ellipsis-2">洪欣老師正音課洪欣老師正音課洪欣老師正音課洪欣老師正音課洪欣老師正音課</div>
+                        <div class="row">
+                            <div class="col-6 popup-course-status">已開課</div>
+                            <div class="col-6 text-right popup-course-price">NT$2,000</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 一門課程 -->
+                <div class="popup-course">
+                    <div class="popup-course-img">
+                        <img src="img/demo/course-1.png">
+                    </div>
+                    <div class="popup-right">
+                        <div class="popup-course-name overflow-ellipsis-2">洪欣老師正音課</div>
+                        <div class="row">
+                            <div class="col-6 popup-course-status">已開課</div>
+                            <div class="col-6 text-right popup-course-price">NT$2,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 購物車總計 -->
+            <div class="popup-bottom">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="course-count">總計 3 堂課</div>
+                        <div class="popup-course-total">NT$6,000</div>
+                    </div>
+                    <div class="col-8 popup-btn">
+                        <a href="./shoppingInfo.html">
+                            <button type="button" class="btn btn-secondary">前往購物車</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
+
     <div class="wrap-content container">
         <h3 class="text-center">確認付款資訊</h3>
         <h5 class="mt-5 page-title">結帳金額</h5>

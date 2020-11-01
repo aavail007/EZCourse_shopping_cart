@@ -740,6 +740,7 @@ body {
     background-color: #ffffff;
     border-radius: 11px;
     padding: 20px;
+    margin-bottom: 30px;
 }
 
 .order-detail {
@@ -785,7 +786,7 @@ body {
     margin-bottom: 0;
 }
 
-@media(min-width: 768px) and(max-width: 991.99px) {
+@media(min-width: 768px) and (max-width: 991.99px) {
     .mdtext-right {
         text-align: right;
     }
@@ -796,7 +797,6 @@ body {
         position: relative;
         width: 100%;
         max-width: 100%;
-        margin-top: 20px;
     }
 
     .invoice-form .form-control {
@@ -809,6 +809,9 @@ body {
 }
 
 /* ----- popup  ----- */
+#cartBtn {
+    padding: 25px 0;
+}
 .popup-div {
     background-color: #ffffff;
     position: absolute;
@@ -834,11 +837,21 @@ body {
     top: -10px;
     left: calc(50% + 18px);
     transform: translateX(-50%);
+    z-index: -1;
 }
 
 .popup-course {
     padding: 10px 20px;
     border-bottom: solid 1px #eee;
+    cursor: pointer;
+}
+
+.popup-course:first-child:hover {
+    border-radius: 11px 11px 0 0;
+}
+
+.popup-course:hover {
+    background-color: rgb(94 82 246 / 0.1);
 }
 
 .popup-course-img {
@@ -889,4 +902,13 @@ body {
 .popup-btn button {
     height: 50px;
     width: 100%;
+}
+
+.course-count {
+    font-size: 14px;
+    color: #b5b5b5;
+}
+
+.popup-course-total {
+    color: #f72525;
 }

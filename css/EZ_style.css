@@ -126,7 +126,7 @@ body {
 
 
 /* ======== 本次切版新增 css ======== */
-a .ez-btn-md:hover {
+.bottom-btn-div a:hover {
     text-decoration: none;
 }
 .overflow-ellipsis-2 {

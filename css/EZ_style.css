@@ -812,9 +812,21 @@ body {
 }
 
 /* ----- popup  ----- */
-#cartBtn {
-    padding: 25px 0;
+.ez-nav-item { /* 修購物車 popup 高度被撐開問題 */
+    position: relative;
 }
+
+.touch-block { /* 修購物車 popup 高度被撐開問題 */
+    position: absolute;
+    top: 20px;
+    width: 40px; /* 可調整觸發範圍寬度， */
+    height: 100%;
+    cursor: pointer;
+    padding: 35px 0; /* 可調整觸發範圍高度， */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .popup-div {
     background-color: #ffffff;
     position: absolute;

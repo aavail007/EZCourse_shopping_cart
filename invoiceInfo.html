@@ -23,8 +23,9 @@
             <div class="navbar-right" style="position: absolute; right: 20px;">
                 <ul class="navbar-nav align-items-center">
                     <!-- @購物車 -->
-                    <li id="cartBtn" class="ez-nav-item nav-item mr-3 mb-3 mb-md-0" onmouseover="openPopup()"
-                        onmouseout="closePopup()">
+                    <li class="ez-nav-item nav-item mr-3 mb-3 mb-md-0">
+                        <!--  修購物車 popup 高度被撐開問題  -->
+                        <div id="cartBtn" class="touch-block" onmouseover="openPopup()" onmouseout="closePopup()" onclick="goToShoppingInfo()"></div>
                         <button class="nav_btn-cart btn" type="button">
                             <a href="./shoppingInfo.html">
                                 <img class="ez-icon" src="img/nav-cart-off.svg" alt="">

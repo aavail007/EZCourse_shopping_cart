@@ -1,5 +1,5 @@
 /* ======== 原本網站已有的 css ======== */
-body {
+/* body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
@@ -95,7 +95,7 @@ body {
 
 .btn-primary a {
     color: #fff;
-}
+} */
 
 /* header */
 .ez-nav.nav_scrollbg {
@@ -116,11 +116,11 @@ body {
     .navbar-right {
         display: none;
     }
-}
+} 
 /* content */
-.wrap-content {
+/* .wrap-content {
     margin-top: 68px;
-}
+} */
 
 /* ======== 原本網站已有的 css end ======== */
 
@@ -135,21 +135,21 @@ body {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-.btn-outline-secondary {
+.btn-outline {
     color: #5E52F6;
     border-color: #5E52F6;
 }
 
-.btn-outline-secondary:hover {
+.btn-outline:hover {
     color: #fff;
     background-color: #5E52F6;
     border-color: #5E52F6;
     opacity: 1;
 }
 
-.btn-outline-secondary:not(:disabled):not(.disabled):active,
-.btn-outline-secondary:not(:disabled):not(.disabled).active,
-.show > .btn-outline-secondary.dropdown-toggle {
+.btn-outline:not(:disabled):not(.disabled):active,
+.btn-outline:not(:disabled):not(.disabled).active,
+.show > .btn-outline.dropdown-toggle {
     color: #fff;
     background-color: #5E52F6;
     border-color: #5E52F6;
@@ -179,10 +179,13 @@ body {
 
 .page-title {
     margin-bottom: 0;
+    line-height: 1;
 }
 
 .page-title img {
-    vertical-align: top;
+    width: auto;
+    display: inline-block;
+    margin-bottom: 5px;
 }
 
 .bottom-btn-div {
@@ -213,6 +216,12 @@ body {
     border-color: #665bf7;
     outline: 0;
     box-shadow: none;
+}
+
+.shopping-cart-account .form-control,
+.pay-method-div .form-control{
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
 }
 
 .coupon-collapse {
@@ -434,14 +443,14 @@ body {
     display: inline-block;
     width: 200px;
     margin-left: 15px;
-    border-radius: 0.5rem 0 0 0.5rem;
+    border-radius: 0.25rem 0 0 0.25rem !important;
 }
 
 .coupon-input {
     display: inline-block;
     width: 154px;
     margin-left: 15px;
-    border-radius: 0.5rem 0 0 0.5rem;
+    border-radius: 0.25rem 0 0 0.25rem !important;
 }
 
 .shopping-cart-account .custom-control-label {
@@ -457,8 +466,9 @@ body {
     position: relative;
     vertical-align: top;
     left: -5px;
-    border-radius: 0 0.5rem 0.5rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
     border: solid 1px #8B82F9;
+    font-size: 1rem;
 }
 
 .group-cancel-btn {
@@ -471,6 +481,36 @@ body {
     text-align: center;
     margin-top: 15px;
 }
+
+.shopping-cart-account [type="radio"]:checked + label, [type="radio"]:not(:checked) + label {
+    padding-left: 0;
+}
+.shopping-cart-account [type="radio"]:checked + label:before,
+.shopping-cart-account [type="radio"]:not(:checked) + label:before {
+    top: 0.25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.shopping-cart-account [type="radio"]:checked + label:after,
+.shopping-cart-account [type="radio"]:not(:checked) + label:after {
+    width: 1rem;
+    height: 1rem;
+    top: 0.25rem;
+    left: -1.5rem;
+    background: no-repeat 50% / 50% 50%;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.shopping-cart-account .btn {
+    padding: 0.375rem 0.75rem;
+}
+
 @media(max-width:1024px) {
     .th-title {
         display: none;
@@ -516,6 +556,20 @@ body {
 
     .group-input {
         margin-top: 10px;
+    }
+}
+
+@media(max-width:320px) {
+    .discount-code-input {
+        width: 160px;
+    }
+
+    .coupon-input {
+        width: 138px;
+    }
+
+    .shopping-cart-account .custom-control {
+        padding-left: 0;
     }
 }
 /* ----- confirmPayment.html ----- */
@@ -789,7 +843,7 @@ body {
     margin-bottom: 0;
 }
 
-@media(min-width: 768px) and (max-width: 991.99px) {
+@media(min-width: 768px) and(max-width: 991.99px) {
     .mdtext-right {
         text-align: right;
     }
@@ -812,11 +866,13 @@ body {
 }
 
 /* ----- popup  ----- */
-.ez-nav-item { /* 修購物車 popup 高度被撐開問題 */
+.ez-nav-item {
+    /* 修購物車 popup 高度被撐開問題 */
     position: relative;
 }
 
-.touch-block { /* 修購物車 popup 高度被撐開問題 */
+.touch-block {
+    /* 修購物車 popup 高度被撐開問題 */
     position: absolute;
     top: 20px;
     width: 40px; /* 可調整觸發範圍寬度， */
@@ -843,7 +899,7 @@ body {
 }
 
 .popup-triangle {
-   width: 0;
+    width: 0;
     height: 0;
     border-style: solid;
     border-width: 0 15px 15px 15px;
